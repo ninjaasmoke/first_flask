@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Hello!</h1>
+
+    <section>Here are some links you can try!</section>
+
+    <table>
+        <tr><td>A simple login page</td> <td><a href="/login">/login</a></td></tr>
+        <tr><td>Post page with PostId = 100</td> <td><a href="/post/100">/post/100</a></td></tr>
+        <tr><td>Sub paths</td> <td><a href="/path/some_sub_path">/path/some_sub_path</a></td></tr>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form action="{{url_for('login')}}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required  autocomplete="off"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+    <div class="notif">
+        * use username=&#96;ninjaasmoke&#96; & password=&#96;hellosai&#96;
+    </div>
+</body>
+
+</html>
