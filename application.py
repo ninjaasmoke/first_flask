@@ -45,6 +45,10 @@ def show_post(post_id):
 @app.route('/path/<path:subpath>')
 def show_subpath(subpath):
     # show the subpath after /path/
+    return render_template('common.html', common=json.dumps({
+        'title': 'Subpath',
+        'path': escape(subpath)
+    }, indent=2))
     return f'Subpath: {escape(subpath)}'
 
 @app.route('/login', methods=['POST', 'GET'])
