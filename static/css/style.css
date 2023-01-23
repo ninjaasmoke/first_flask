@@ -87,6 +87,20 @@ th, td {
     user-select: none;
 }
 
+.pre_container {
+    width: 100%;
+    overflow-x: scroll;
+    background-color: #3d4c5f;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+pre {
+    font-size: 16px;
+    max-width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 @media screen and (max-width: 1200px) {
     body {
         padding: 10px 100px;

@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template, request
 from markupsafe import escape
+import json
 
 from login import log_the_user_in, valid_login
 
@@ -11,7 +12,11 @@ def hello_world():
 
 @app.route("/me")
 def something_else():
-    return "<h1>Nithin Sai is me</h1>"
+    return render_template('common.html', common=json.dumps({
+        'title': 'Me',
+        'information': 'Nithin Sai is me'
+    }, indent=2))
+    # return "<h1>Nithin Sai is me</h1>"
 
 # escaping from attacks
 @app.route("/users/<name>")
@@ -31,7 +36,11 @@ def hello(name=None):
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
     # show the post with the given id, the id is an integer
-    return f'Post {post_id}'
+    return render_template('common.html', common=json.dumps({
+        'title': 'Path',
+        'post_id': post_id,
+        'information': 'Change the uri parameter with a new integer id for new page!'
+    }, indent=2))
 
 @app.route('/path/<path:subpath>')
 def show_subpath(subpath):
